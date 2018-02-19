@@ -34,6 +34,11 @@ module VagrantPlugins
         Cap::ChangeHostName
       end
 
+      guest_capability('alpine','mount_virtualbox_shared_folder') do
+        require_relative "cap/mount_virtualbox_shared_folder"
+        Cap::MountVirtualBoxSharedFolder
+      end
+
       guest_capability('alpine', 'nfs_client_install') do
         require_relative 'cap/nfs_client'
         Cap::NFSClient
